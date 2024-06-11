@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body class="bg-gradient-to-r from-blue-400 to-indigo-500 min-h-screen p-6">
+    <section id="weather-currently" class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6">
+        <div class="weather-currently-top flex justify-between items-center mb-6">
+            <div>
+                <h3 class="weather-currently-city text-3xl font-bold text-gray-800" id="city-name">City Name</h3>
+                <span class="weather-currently-city-district text-gray-500" id="city-district"></span>
+            </div>
+            <form class="weather-currently-input flex" id="city-form">
+                <input name="q" type="text" placeholder="Enter city name" class="weather-currently-input-text border p-2 rounded-l outline-none focus:ring-2 focus:ring-blue-500" id="city-input">
+                <button type="submit" class="weather-currently-input-open bg-blue-600 text-white py-2 px-4 rounded-r hover:bg-blue-700 transition duration-200">Get Weather</button>
+            </form>
+        </div>
+        <div class="weather-currently-middle mt-6">
+            <div class="weather-currently-middle-today-wrapper flex flex-col lg:flex-row justify-between">
+                <div id="weather-section" class="weather-currently-middle-today w-full bg-gradient-to-r from-yellow-200 to-orange-300  rounded-xl shadow-inner">
+                    <div class="weather-currently-today-legend flex justify-between">
+                        <p class="weather-currently-info-item date">
+                            <span class="weather-currently-info-item-date-label font-semibold text-gray-700">Current Weather</span><br>
+                        </p>
+                        <p class="weather-currently-info-item sun text-gray-700">
+                            <span class="weather-currently-info-sunrise block text-2xl">Sunrise: <span id="sunrise-time">00:00</span></span>
+                            <span class="weather-currently-info-sunset block text-2xl">Sunset: <span id="sunset-time">00:00</span></span>
+                        </p>
+                    </div>
+                    <div class="weather-currently-icon flex justify-center mt-4">
+                        <img id="weather-icon" src="https://www.example.com/weather-icons/sunny.png" alt="Weather Icon" class="w-24 h-24">
+                    </div>
+                    <div class="weather-currently-temp flex justify-center items-center mt-4">
+                        <div class="weather-currently-temp-strict text-5xl text-gray-800 font-bold" id="current-temp">0°C</div>
+                    </div>
+                    <ul class="weather-currently-details mt-4 text-gray-700">
+                        <li class="weather-currently-icon-description text-2xl" id="weather-description">Clear Sky</li>
+                        <li class="weather-currently-details-item feelTemperature">
+                            <b class="weather-currently-details-type text-2xl">Feels Like:</b>
+                            <span class="weather-currently-details-value text-2xl" id="feels-like">0°C</span>
+                        </li>
+                        <li class="weather-currently-details-item pressure">
+                            <b class="weather-currently-details-type text-2xl">Pressure:</b>
+                            <span class="weather-currently-details-value text-2xl" id="pressure">0 hPa</span>
+                        </li>
+                        <li class="weather-currently-details-item wind">
+                            <b class="weather-currently-details-type text-2xl">Wind:</b>
+                            <span class="weather-currently-details-value text-2xl" id="wind">0 km/h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="forecast-container" class="mt-6  rounded-xl shadow-inner p-4">
+            </div>
+        </div>
+    </section>
+
+    <script src="../../IdeaProjects/WeatherAppJS/ApiConnection.js"></script>
+
+</body>
+
+</html>
